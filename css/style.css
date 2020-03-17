@@ -1,0 +1,54 @@
+body{
+    background-color: rgb(151, 173, 214);
+}
+header {
+    height: 150px;
+    width: 1000px;
+}
+header img.align-left{
+    height: 100px;
+    width: 150px;
+    float: left;
+}
+h1 {
+    display: inline-block;
+    text-align: left;
+    font-size: larger;
+    font-size: 40px;
+    padding-top: 40px;
+}
+.results{
+    float: left;
+    height: 500px;
+    width: 150px;
+    margin: 20px;
+}
+#instructions{
+   display: inline-block;
+   /* float: right; */
+   height: 40%;
+}
+.product-img{
+    /* display: inline-block; */
+    padding: 30px;
+    float: right;
+    height: 40%;
+    width: 80%;
+}
+article img{
+    width: 250px;
+    height: 250px;
+    padding: 30px;
+}
+footer{
+   width: 1000px;
+   padding-top: 50px;
+    text-align: center;
+    display: inline-block;
+}
+aside{
+    width: 230px;
+}
+article{
+    float: right;
+}

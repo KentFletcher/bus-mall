@@ -1,0 +1,64 @@
+body{
+    background-color: rgb(151, 173, 214);
+}
+header {
+    height: 150px;
+    width: 1000px;
+}
+header img.align-left{
+    height: 100px;
+    width: 150px;
+    float: left;
+    padding: 10px;
+    padding-top: 30PX;
+}
+h1 {
+    display: inline-block;
+    text-align: left;
+    font-size: 100px;
+    padding-top: 40px;
+}
+.results{
+    float: left;
+    height: 500px;
+    width: 350px;
+    margin: 20px;
+}
+#instructions{
+   display: inline-block;
+   height: 40%;
+   text-align: center;
+   width: 70%;
+}
+.product-img{
+    padding: 10px;
+    float: right;
+    height: 40%;
+    width: 70%;
+    padding-top: 100px;
+}
+article img{
+    width: 275px;
+    height: 275px;
+    padding: 30px;
+}
+footer{
+   width: 1000px;
+   padding-top: 150px;
+    text-align: center;
+    display: inline-block;
+    
+}
+aside{
+    width: 230px;
+}
+article{
+    float: right;
+}
+h2{
+    font-size: 40px;
+}
+p {
+    font-size: 30px;
+
+}

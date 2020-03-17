@@ -9,46 +9,56 @@ header img.align-left{
     height: 100px;
     width: 150px;
     float: left;
+    padding: 10px;
+    padding-top: 30PX;
 }
 h1 {
     display: inline-block;
     text-align: left;
-    font-size: larger;
-    font-size: 40px;
+    font-size: 100px;
     padding-top: 40px;
 }
 .results{
     float: left;
     height: 500px;
-    width: 150px;
+    width: 350px;
     margin: 20px;
 }
 #instructions{
    display: inline-block;
-   /* float: right; */
    height: 40%;
+   text-align: center;
+   width: 70%;
 }
 .product-img{
-    /* display: inline-block; */
-    padding: 30px;
+    padding: 10px;
     float: right;
     height: 40%;
-    width: 80%;
+    width: 70%;
+    padding-top: 100px;
 }
 article img{
-    width: 250px;
-    height: 250px;
+    width: 275px;
+    height: 275px;
     padding: 30px;
 }
 footer{
    width: 1000px;
-   padding-top: 50px;
+   padding-top: 150px;
     text-align: center;
     display: inline-block;
+    
 }
 aside{
     width: 230px;
 }
 article{
     float: right;
+}
+h2{
+    font-size: 40px;
+}
+p {
+    font-size: 30px;
+
 }

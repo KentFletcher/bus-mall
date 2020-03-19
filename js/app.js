@@ -3,9 +3,9 @@
 var allImages = [];
 var clicks = 0;
 var numberOfRounds = 25;
-// var voteArray = [];
 
 var ctx = document.getElementById('dataChart').getContext('2d');
+// eslint-disable-next-line no-undef
 var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
@@ -155,6 +155,8 @@ var image1 = document.getElementById('img1');
 var image2 = document.getElementById('img2');
 var image3 = document.getElementById('img3');
 
+
+
 // Function to cycle through images and randomly choose one to be displayed.
 function genRandomImage() {
   var index = Math.floor(Math.random() * allImages.length);
@@ -198,7 +200,6 @@ function renderList() {
     listEl.appendChild(clicked);
   }
 }
-// renderList();
 
 function renderChart() {
   for(var i = 0; i < allImages.length; i++) {
@@ -216,8 +217,8 @@ function clickHandler(event) {
   for (var i = 0; i < allImages.length; i++) {
     if (allImages[i].name === event.target.name) {
       allImages[i].numClicked++;
-      console.log(clicks);
-    }if (clicks > numberOfRounds) {
+      //   console.log(clicks);
+    } if (clicks > numberOfRounds) {
       event = false;
       alert('Thanks, checkout your favorites!');
       renderList();
@@ -226,6 +227,7 @@ function clickHandler(event) {
       image1.removeEventListener('click', clickHandler);
       image2.removeEventListener('click', clickHandler);
       image3.removeEventListener('click', clickHandler);
+      localStorage.setItem('allImages', JSON.stringify(allImages));
     }
   }
 }
@@ -235,3 +237,4 @@ image2.addEventListener('click', clickHandler);
 image3.addEventListener('click', clickHandler);
 
 
+ProductImage.allImages = JSON.parse(localStorage.getItem('allImages'));

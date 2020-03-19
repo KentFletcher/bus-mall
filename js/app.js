@@ -200,7 +200,6 @@ function renderList() {
     listEl.appendChild(clicked);
   }
 }
-// renderList();
 
 function renderChart() {
   for(var i = 0; i < allImages.length; i++) {
@@ -228,9 +227,7 @@ function clickHandler(event) {
       image1.removeEventListener('click', clickHandler);
       image2.removeEventListener('click', clickHandler);
       image3.removeEventListener('click', clickHandler);
-      //   localStorage.setItem("ProductImage", JSON.stringify(ProductImage.allImages));
       localStorage.setItem('allImages', JSON.stringify(allImages));
-    //   console.log(localStorage);
     }
   }
 }
@@ -239,15 +236,5 @@ image1.addEventListener('click', clickHandler);
 image2.addEventListener('click', clickHandler);
 image3.addEventListener('click', clickHandler);
 
-function reloadLocalData() {
-  for (var i = 0; i < allImages.length; i++) {
-    if (localStorage.getItem('allImages') !== null) {
-      ProductImage.allImages = JSON.parse(localStorage.getItem('allImages'));
-    } else {
-      localStorage.setItem('allImages', JSON.stringify(ProductImage.allImages));
-    }
-  }
-}
 
-reloadLocalData();
-
+ProductImage.allImages = JSON.parse(localStorage.getItem('allImages'));

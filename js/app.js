@@ -3,7 +3,6 @@
 var allImages = [];
 var clicks = 0;
 var numberOfRounds = 25;
-
 var ctx = document.getElementById('dataChart').getContext('2d');
 // eslint-disable-next-line no-undef
 var myChart = new Chart(ctx, {
@@ -58,7 +57,8 @@ var myChart = new Chart(ctx, {
         'rgba(54, 162, 235, 1)'
       ],
       borderWidth: 1
-    },{
+    },
+    {
       label: 'Times Shown',
       data: [],
       backgroundColor: [
@@ -156,7 +156,6 @@ var image2 = document.getElementById('img2');
 var image3 = document.getElementById('img3');
 
 
-
 // Function to cycle through images and randomly choose one to be displayed.
 function genRandomImage() {
   var index = Math.floor(Math.random() * allImages.length);
@@ -177,6 +176,7 @@ function renderProducts() {
   image1.name = newImage1.name;
   newImage1.timesRendered++;
 
+
   var newImage2 = genRandomImage();
   image2.src = newImage2.imagePath;
   image2.name = newImage2.name;
@@ -188,6 +188,7 @@ function renderProducts() {
   newImage3.timesRendered++;
 }
 renderProducts();
+
 
 //function to render list of clicked to the page
 function renderList() {
@@ -206,8 +207,11 @@ function renderChart() {
     myChart.data.labels.push(allImages[i].name);
     myChart.data.datasets[0].data.push(allImages[i].numClicked);
     myChart.data.datasets[1].data.push(allImages[i].timesRendered);
+    localStorage.setItem('allImages', JSON.stringify(allImages));
   }
 }
+
+
 
 function clickHandler(event) {
   clicks++;
@@ -217,8 +221,9 @@ function clickHandler(event) {
   for (var i = 0; i < allImages.length; i++) {
     if (allImages[i].name === event.target.name) {
       allImages[i].numClicked++;
-      //   console.log(clicks);
-    } if (clicks > numberOfRounds) {
+      console.log(clicks);
+    }
+    if (clicks > numberOfRounds) {
       event = false;
       alert('Thanks, checkout your favorites!');
       renderList();
@@ -227,7 +232,6 @@ function clickHandler(event) {
       image1.removeEventListener('click', clickHandler);
       image2.removeEventListener('click', clickHandler);
       image3.removeEventListener('click', clickHandler);
-      localStorage.setItem('allImages', JSON.stringify(allImages));
     }
   }
 }
@@ -235,6 +239,3 @@ function clickHandler(event) {
 image1.addEventListener('click', clickHandler);
 image2.addEventListener('click', clickHandler);
 image3.addEventListener('click', clickHandler);
-
-
-ProductImage.allImages = JSON.parse(localStorage.getItem('allImages'));
